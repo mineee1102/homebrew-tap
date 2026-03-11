@@ -8,10 +8,12 @@ class Tdb < Formula
   version "0.1.0"
   license "MIT"
 
+  depends_on "neovim"
+
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/mineee1102/tdb/releases/download/v0.1.0/tdb_0.1.0_darwin_amd64.tar.gz"
-      sha256 "ac258b9f52efb57ec12a16743b8bf364274b6daecc33fea37ea78a3f02c52434"
+      sha256 "beed81a3b2b0a4cc3b46295cec9abf0a5b77864d333be86cf72f9aaf9b4c3ae6"
 
       define_method(:install) do
         bin.install "tdb"
@@ -19,7 +21,7 @@ class Tdb < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/mineee1102/tdb/releases/download/v0.1.0/tdb_0.1.0_darwin_arm64.tar.gz"
-      sha256 "fc983f206f45e2bdb73fde493c532b6962803b1eac35af6e1c0c79e2dc8c7acd"
+      sha256 "3c54fcc8d5c1ffadd0fab1c94d8c1d50bdf5e3f4f0c484353c5606e10770764f"
 
       define_method(:install) do
         bin.install "tdb"
@@ -30,14 +32,14 @@ class Tdb < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/mineee1102/tdb/releases/download/v0.1.0/tdb_0.1.0_linux_amd64.tar.gz"
-      sha256 "920457034817ad42da5f1d2e6720c53b2e34ae778300cb79bd85227990a1e40f"
+      sha256 "fcb2d2a634029fdca54da55c0cd853ef0cb976bf64f62ffdd8df128d6f30f6b5"
       define_method(:install) do
         bin.install "tdb"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/mineee1102/tdb/releases/download/v0.1.0/tdb_0.1.0_linux_arm64.tar.gz"
-      sha256 "bdddc20f7f91147ce4277a186e3c4e2e05ecf4b91dcbd9be530b4cc3c1013a70"
+      sha256 "e23d44eb6fb134db173065b86146d0db5c4825860aa22bc639742fe52b853338"
       define_method(:install) do
         bin.install "tdb"
       end
